@@ -1,0 +1,85 @@
+# hash tags are comments, it can take galleries in different formats
+# but ONLY one 1 gallery per 1 line
+
+#--------------------------------------------
+#nasa
+#--------------------------------------------
+http://imgur.com/a/sqNYY
+http://imgur.com/a/bI04e
+
+#--------------------------------------------
+#kerbal space program and NASA and USSR history
+#--------------------------------------------
+
+See part 1 here: http://imgur.com/gallery/HlJyl
+See part 2 here: http://imgur.com/gallery/nK1bo  can contain duplicates, they will be ignored
+See part 2 here: http://imgur.com/gallery/nK1bo  can contain duplicates, they will be ignored
+See part 2 here: http://imgur.com/gallery/nK1bo  can contain duplicates, they will be ignored
+See part 2 here: http://imgur.com/gallery/nK1bo  can contain duplicates, they will be ignored
+See part 2 here: http://imgur.com/gallery/nK1bo  can contain duplicates, they will be ignored
+See part 3 here: http://imgur.com/gallery/mb4mv
+See part 4 here: http://imgur.com/gallery/T36Ms
+See part 5 here: http://imgur.com/gallery/xBzGb
+See part 6 here: http://imgur.com/gallery/LASAE  lists can contain some garbage around the links
+See part 7 here: http://imgur.com/gallery/AuHdB
+See part 8 here: http://imgur.com/gallery/jvNkk
+See part 9 here: http://imgur.com/gallery/rRpCm
+See part 10 here: http://imgur.com/gallery/Bwvg9
+See part 11 here: http://imgur.com/gallery/lG1Te
+See part 12 here: http://imgur.com/gallery/b7SCu
+See part 13 here: http://imgur.com/gallery/hFyp0
+See part 14 here: http://imgur.com/gallery/8YnMA
+See part 15 here: http://imgur.com/gallery/SE6Tc
+See part 16 here: http://imgur.com/gallery/3UqRh
+See part 17 here: http://imgur.com/gallery/UMcRE
+See part 18 here: http://imgur.com/gallery/hkR4c
+See part 19 here: http://imgur.com/gallery/gHXwF
+See part 20 here: http://imgur.com/gallery/oS7wf
+See part 21 here: http://imgur.com/gallery/rywgQ
+See part 22 here: http://imgur.com/gallery/zCh7b
+See part 23 here: http://imgur.com/gallery/APQD8
+See part 24 here: http://imgur.com/gallery/X3Oqs
+See part 25 here: http://imgur.com/gallery/SI9in
+See part 26 here: http://imgur.com/gallery/CYqUw
+See part 27 here: http://imgur.com/gallery/Ij8O6
+See part 28 here: http://imgur.com/gallery/60wAV
+See part 29 here: http://imgur.com/gallery/tC9iP
+See part 30 here: http://imgur.com/gallery/NFw4V/
+See part 31 here: http://imgur.com/gallery/FoCSc/
+See part 32 here: http://imgur.com/gallery/S2NgV
+See part 33 here: http://imgur.com/gallery/TKWLA
+See part 34 here: http://imgur.com/gallery/6M7X1
+See part 35 here: http://imgur.com/gallery/mwBbD
+See part 36 here: http://imgur.com/gallery/nD39b
+See part 37 here: http://imgur.com/gallery/M1ekQ
+See part 38 here: http://imgur.com/gallery/4b6oU
+See part 39 here: http://imgur.com/gallery/TIvY8
+See part 40 here: http://imgur.com/gallery/LHPaY
+See part 41 here: http://imgur.com/gallery/vg1o0
+See part 42 here: http://imgur.com/gallery/t7NxP
+See part 43 here: http://imgur.com/gallery/hWgTc
+See part 44 here: http://imgur.com/gallery/xLvzH
+See part 45 here: http://imgur.com/gallery/ddXN6
+See part 46 here: http://imgur.com/gallery/3FKW8
+See part 47 here: http://imgur.com/gallery/mLXn4
+See part 48 here: http://imgur.com/gallery/c7QOO
+See part 49 here: http://imgur.com/gallery/YUEVv
+See part 50 here: http://imgur.com/gallery/hwZm1
+See part 51 here: http://imgur.com/gallery/MB1Nb
+See part 52 here: http://imgur.com/gallery/KCo3C
+See part 53 here: http://imgur.com/gallery/9846j
+See part 54 here: http://imgur.com/gallery/rcY1o
+See part 55 here: http://imgur.com/gallery/LiC5u
+See part 56 here: http://imgur.com/gallery/Icjcf
+See part 57 here: http://imgur.com/gallery/JiV27
+See part 58 here: http://imgur.com/gallery/QUduX
+See part 59 here: http://imgur.com/gallery/ffGs8
+# animated - image in the gallery
+See part 60 here: http://imgur.com/gallery/xISKT  here is a gif
+See part 61 here: http://imgur.com/gallery/EjuOM
+See part 62 here: http://imgur.com/gallery/HwxV2
+See part 63 here: http://imgur.com/gallery/w87Ug
+See part 64 here: http://imgur.com/gallery/SgTOn
+See part 65 here: http://imgur.com/gallery/WNFzY
+
+

@@ -1,0 +1,5 @@
+/jshon/
+
+/batchExample/*
+!/batchExample/_list.txt
+!/batchExample/_runBatchExample.sh
