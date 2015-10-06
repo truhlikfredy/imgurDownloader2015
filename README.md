@@ -2,7 +2,7 @@
 This is set of bash scripts which automated downloading images from imgur.
 
 ![solved maze]
-(https://raw.githubusercontent.com/truhlikfredy/imgurDownloader2015/master/screenShotsM/00.png)
+(https://raw.githubusercontent.com/truhlikfredy/imgurDownloader2015/master/screenShots/00.png)
 
 ##Heartbeat
 Because I hate downloading some tools to find they are not compatible anymore with given service I will post here from time to time that this tool still works.
