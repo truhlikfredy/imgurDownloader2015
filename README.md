@@ -7,6 +7,7 @@ This is set of bash scripts which automated downloading images from imgur.
 ##Heartbeat
 Because I hate downloading some tools to find they are not compatible anymore with given service I will post here from time to time that this tool still works.
 ####2015/10/06 - tested and working
+####2016/01/16 - tested and working
 
 ##Features
 - Will download all images from single gallery **imgurDownloader.sh**
@@ -16,6 +17,9 @@ Because I hate downloading some tools to find they are not compatible anymore wi
 - Will ignore duplicate galleries and duplicate files.
 - Escapes strange characters in titles.
 - Stores descriptions to images to separate text file.
+
+##Todo
+- Probably allow download imgur URL with single image (now just galleries are supported)
 
 ##Dependencies
 - jshon (http://kmkeen.com/jshon/)
