@@ -8,20 +8,21 @@ This is set of bash scripts which automated downloading images from imgur.
 Heartbeat
 ---------
 
-Because I hate downloading some tools to find they are not compatible anymore with given service I will post here from time to time that this tool still works.
+Because I dislike downloading some tools to find they are not compatible anymore with the given service/API, therefore I will post here from time to time that this tool still works.
 
+**2019/09/15 - tested and working (few fixes applied)**
+
+**2016/01/16 - tested and working**
 
 **2015/10/06 - tested and working**
 
-
-**2016/01/16 - tested and working**
 
 Features
 --------
 
 - Will download all images from single gallery **imgurDownloader.sh**
 - Bulk downloader which download multiple galleries form a list (given in a filename). **imgurListDownloader.sh** 
-- Will download given URL into temp folder and display it in specified viewer **imgurView.sh**
+- Will download given URL into temp folder and display it in specified viewer **imgurView.sh** (environment variable imageViewer can change the viewer used)
 - Automatic downloader from clipboard and Xbuffer. **imgurBufferView.sh**
 - Will ignore duplicate galleries and duplicate files.
 - Escapes strange characters in titles.
@@ -70,9 +71,9 @@ imgurView.sh
 
 Will download give gallery into temporary folder and display it using **comix**. This is good when somebody wants to just watch the images outside web-browser. 
 
-It's benificial for:
+It's beneficial for:
 - Low resources computers and galleries witch very large images (build in image viewers are more efficient to view images than web browsers).
-- Somebody with limited or problematic internet access (preloads whole content).
+- Somebody with limited or problematic internet access (pre-loads whole content).
 - Somebody who hates imgur UI and wants to view images outside their website.
 
 
@@ -81,7 +82,7 @@ Install.sh
 
 Not really needed, it will just:
 - Download **jshon** and will try to build it (Debian centrict, using **apt-get**).
-- Will copy scripts into **/opt/imgurDownloader** and place symbolic links to your home **/bin** directory. If you will have not the **~/bin** in your **PATH** enviroment variables it will not work anyway.
+- Will copy scripts into **/opt/imgurDownloader** and place symbolic links to your home **/bin** directory. If you will have not the **~/bin** in your **PATH** environment variables then you will have to remember the path to the scripts, but now they do not depend anymore on the PATH to be set.
 
 This can be done by hand, just copy the **\*.sh** files somewhere where they will be in the **PATH** enviroment variable. And make sure the jshon (needed for all scripts) and xsel (needed just for 1 script) are installed.
 

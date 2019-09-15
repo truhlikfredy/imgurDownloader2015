@@ -1,11 +1,14 @@
 #!/bin/bash
 
-#author:        Anton Krug
-#date:          2015/10/05 
-#depending on:  http://kmkeen.com/jshon/ for JSON parsing
+# Author:       Anton Krug
+# Date:         2019/09/15
+# Depending on: http://kmkeen.com/jshon/ for JSON parsing
 
-#will always download to current director
+# Will always download to current director
 DIR=./
+
+# Detect the absolute location of this script
+CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 if [ $# -eq 0 ]
 then
@@ -14,17 +17,17 @@ then
     exit 1
 fi
 
-
 URLS=$1
 
-#get list, filter imgur links, filter comments, filter garbage, ignore duplicates
-LIST=`cat $URLS | grep -v "^#" | grep imgur\.com | sed 's/^.*http:\/\/imgur.com/http:\/\/imgur.com/' | sed 's/\ .*//' | xargs -n1 | sort -u | xargs`
+# Get list, filter imgur links, filter comments, filter garbage, 
+# ignore duplicates
+LIST=`cat $URLS | grep -v "^#" | grep imgur\.com | sed 's/^.*http[s*]:\/\/imgur.com/http[s*]:\/\/imgur.com/' | sed 's/\ .*//' | xargs -n1 | sort -u | xargs`
 
 for i in $LIST; do
   if [ ! -z $i ]; then
     echo 
     echo "--- Downloading a gallery $i ---"
-    imgurDownloader.sh $DIR $i
+    $CURRENT_DIR/imgurDownloader.sh $DIR $i
   fi
 done
 

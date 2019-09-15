@@ -1,8 +1,10 @@
 #!/bin/bash
 
-#author:        Anton Krug
-#date:          2016/01/24
-#depending on:  http://kmkeen.com/jshon/ for JSON parsing
+# Author:       Anton Krug
+# Date:         2019/09/15
+# Depending on: http://kmkeen.com/jshon/ for JSON parsing
+
+DEBUG=0  # Set DEBUG=1 to see verbose/debug messages
 
 DESCRIPTIONFILE=_imgurDescriptions.txt
 
@@ -20,23 +22,27 @@ if [[ $# -eq 2 ]]; then
   URL=$2
 fi
 
-if [[ ! $URL =~ ^http://imgur.com ]]; then
-  echo "Not imgur detected in '$URL' url!"
+if [[ ! $URL =~ ^http[s*]://imgur.com  ]]; then
+  echo "No imgur URL detected in '$URL' url!"
   exit 1
 fi
 
 hashURL=`echo $URL | cut -d "/" -f 5`
 URL="http://imgur.com/ajaxalbums/getimages/$hashURL/hit.json?all=true"
-#echo $URL
+if [ "$DEBUG" -eq "1" ]; then
+  echo $URL
+fi
 
-#gallery=`wget -q "$URL" -O - | grep -e "image.*\: {" | sed -e 's/^\ *image\ *: //' | sed -e 's/,$//'`
-gallery=`wget -q "$URL" -O -`
-#echo $gallery | xxd
-#echo $gallery 
+gallery=`wget --no-check-certificate -q "$URL" -O -`
+if [ "$DEBUG" -eq "1" ]; then
+  echo $gallery | xxd
+  echo $gallery 
+fi
 
-#images=`echo $gallery | jshon -e album_images -e images`
 images=`echo $gallery | jshon -e data -e images`
-#echo $gallery | jshon -e album_images -e images
+if [ "$DEBUG" -eq "1" ]; then
+  echo $gallery | jshon -e album_images -e images
+fi
 
 size=`echo $images | jshon -l`
 echo "Found $size images, downloading to directory $DIR"
@@ -52,29 +58,27 @@ for i in $(seq 0 $((size-1))); do
     ext = ".jpg"
   fi
 
-  #escape special characters so we will have valid file name even for strange titles
+  # Escape special characters so we will have valid file name even 
+  # for strange titles
   if [ ! -z "$title" ]; then
-    title=$(printf '%q' "$title")                   #escape characters
-    title=`echo $title | sed 's/\\\ / /g'`          #except spaces, do not escape spaces
-    title=`echo $title | sed 's/\//-/g'`            #replace all / with -
+    title=$(printf '%q' "$title")          # Escape characters
+    title=`echo $title | sed 's/\\\ / /g'` # Except spaces (do not escape spaces)
+    title=`echo $title | sed 's/\//-/g'`   # Replace all / with -
   fi
 
-  #file naming schema
+  # File naming schema
   FILE=$title-$hash.$ext
   
-
   if [ -f "$FILE" ]; then
-    #it already exists, do not download again
+    # It already exists, do not download again
     echo "Skipping '$FILE'..."
   else
     echo -n "Downloading image $i "
     echo "to a file '$FILE'"
-    wget -q http://i.imgur.com/$hash.$ext -O "$DIR/$FILE"
+    wget --no-check-certificate -q https://i.imgur.com/$hash.$ext -O "$DIR/$FILE"
     if [[ ! -z $description ]]; then
       echo -e "------------------------\n$FILE:\n$description\n\n" >> $DIR/$DESCRIPTIONFILE
     fi
   fi
 
 done
-
-

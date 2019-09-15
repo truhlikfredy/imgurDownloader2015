@@ -1,6 +1,9 @@
 #!/bin/sh
 
-PREFIX=/opt/imgurDownloader
+# Use environment variable to change the prefix, 
+# by default it's going to be stored into the:
+# /opt/imgurDownloader 
+PREFIX=${PREFIX:-/opt/imgurDownloader}
 
 FILE=imgurDownloader.sh
 BATCHFILE=imgurListDownloader.sh
@@ -9,24 +12,31 @@ VIEWFILE=imgurView.sh
 BUFFERFILE=imgurBufferView.sh
 
 echo
-echo --------  dependencies: compiling and installing jshon -----------
+echo --------  Dependencies: compiling and installing jshon -----------
 echo
 
 if hash jshon 2>/dev/null; then
   echo "Looks 'jshon' is already present, skipping installation"
 else
+  echo "Installing build depedencies (Ubuntu/Debian only):"
+  sudo apt-get install git libjansson-dev # Getting dependancies of dependancies
 
-  sudo apt-get install git libjansson-dev  #getting dependancies of dependancies
+  echo
+  echo "Fetching the source"
+  git clone git@github.com:keenerd/jshon.git # Getting source code
 
-  git clone git@github.com:keenerd/jshon.git  # getting source code
-
-  #compiling and installing dependancies
+  echo
+  echo "Complining the source"
   mkdir jshon > /dev/null 2>&1
   cd jshon
   make
+
+  echo
+  echo Jshon compiled, trying to install it:
   sudo make install
+
   cd ..
-  rm -rf jshon/     # removing the jshon source directory
+  rm -rf jshon/  # Removing the jshon source directory
 fi
 
 
@@ -34,10 +44,10 @@ echo
 echo ------------------ installing imgurDownloader -------------------
 echo
 
-#making all executable
+# Making all executable
 chmod a+x $FILE $BATCHFILE $EXAMPLEFILE $VIEWFILE $BUFFERFILE batchExample/_runBatchExample.sh
 
-#copy the file to the target
+# Copy the file to the target
 sudo -s -- "mkdir -p $PREFIX && cp $FILE $PREFIX/$FILE && cp $BATCHFILE $PREFIX/$BATCHFILE && cp $VIEWFILE $PREFIX/$VIEWFILE && cp $BUFFERFILE $PREFIX/$BUFFERFILE"
 
 

@@ -1,34 +1,35 @@
 #!/bin/bash
 
-#author:        Anton Krug
-#date:          2015/10/05
-#depending on:  xsel, jshon
+# Author:       Anton Krug
+# Date:         2019/09/15
+# Depending on: http://kmkeen.com/jshon/ for JSON parsing
 
-
-#will take URLs from Xbuffer
+# Will take URLs from Xbuffer
 URLA=`xsel -o`
 
-#will take URLs from clipboard
+# Will take URLs from clipboard
 URLB=`xsel --clipboard -o`
 
+# Detect the absolute location of this script
+CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-#detect if imgur links are present
+# Detect if imgur links are present
 for URL in `echo $URLA $URLB | xargs`
 do
-  if [[ $URL =~ ^http://imgur.com ]];
+  if [[ $URL =~ ^http[s*]://imgur.com ]];
   then
     DOWNLOAD=`echo $DOWNLOAD $URL`
   fi
 done
 
 
-#will download all galleries and display them in your favorite image viewer
+# Will download all galleries and display them in your favorite image viewer
 if [ ! -z DOWNLOAD ]; 
 then
-  #no duplicates
+  # No duplicates
   DOWNLOAD=`echo $DOWNLOAD | xargs -n1 | sort -u | xargs`
-  #download and display them
-  imgurView.sh $DOWNLOAD
+  # Download and display them
+  $CURRENT_DIR/imgurView.sh $DOWNLOAD
 else
   echo "Nothing downloaded, no imgur links found in clipboard or Xbuffer"
 fi
